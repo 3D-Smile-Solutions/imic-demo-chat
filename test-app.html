@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test App</title>
+</head>
+<body>
+    <h1>Testing if server works</h1>
+    <iframe src="http://localhost:3000" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
+    
+    <script>
+        // Check if there are any errors
+        window.addEventListener('error', function(e) {
+            console.error('Error caught:', e);
+        });
+        
+        // Try to fetch the app
+        fetch('http://localhost:3000')
+            .then(res => res.text())
+            .then(html => {
+                console.log('App HTML loaded, length:', html.length);
+            })
+            .catch(err => {
+                console.error('Failed to load app:', err);
+            });
+    </script>
+</body>
+</html>

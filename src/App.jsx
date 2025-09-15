@@ -1,4 +1,6 @@
 import './App.css';
+import ChatWidget from './components/ChatWidget/ChatWidget';
+// import ChatWidgetTest from './components/ChatWidget/ChatWidgetTest';
 
 function App() {
   return (
@@ -9,7 +11,7 @@ function App() {
           GitHub Codespaces <span className="heart">♥️</span> React
         </p>
         <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
+          Chat Widget Demo - Testing Basic App!
         </p>
         <p>
           <a
@@ -22,6 +24,7 @@ function App() {
           </a>
         </p>
       </header>
+      <ChatWidget />
     </div>
   );
 }
