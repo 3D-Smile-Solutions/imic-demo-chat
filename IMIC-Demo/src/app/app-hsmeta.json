@@ -1,0 +1,45 @@
+{
+  "uid": "app-IMIC-Demo",
+  "type": "app",
+  "config": {
+    "description": "HubSpot OAuth app for n8n integration.",
+    "name": "IMIC-Demo-Application",
+    "distribution": "private",
+    "auth": {
+      "type": "oauth",
+      "redirectUrls": [
+        "https://n8n.3dsmilesolutions.ai/rest/oauth2-credential/callback"
+      ],
+      "requiredScopes": [
+        "crm.lists.write",
+        "crm.objects.contacts.read",
+        "crm.objects.contacts.write",
+        "crm.objects.companies.read",
+        "crm.objects.companies.write",
+        "crm.objects.deals.read",
+        "crm.objects.deals.write",
+        "crm.objects.owners.read",
+        "crm.schemas.companies.read",
+        "crm.schemas.contacts.read",
+        "crm.schemas.deals.read",
+        "forms",
+        "tickets"
+      ],
+      "optionalScopes": [],
+      "conditionallyRequiredScopes": []
+    },
+    "permittedUrls": {
+      "fetch": [
+        "https://api.hubapi.com"
+      ],
+      "iframe": [],
+      "img": []
+    },
+    "support": {
+      "supportEmail": "support@example.com",
+      "documentationUrl": "https://example.com/docs",
+      "supportUrl": "https://example.com/support",
+      "supportPhone": "+18005555555"
+    }
+  }
+}

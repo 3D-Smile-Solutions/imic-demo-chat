@@ -11,6 +11,7 @@ const ChatAuthFormWithVerification = ({ onSubmit, onClose }) => {
     zipCode: '',
     gender: '',
     age: '',
+    customerType: '',
     marketingConsent: false
   });
   
@@ -30,6 +31,7 @@ const ChatAuthFormWithVerification = ({ onSubmit, onClose }) => {
       zipCode: localStorage.getItem('user_zipCode') || '',
       gender: localStorage.getItem('user_gender') || '',
       age: localStorage.getItem('user_age') || '',
+      customerType: localStorage.getItem('user_customerType') || '',
     };
     
     const emailVerified = localStorage.getItem('email_verified');
@@ -142,6 +144,7 @@ const ChatAuthFormWithVerification = ({ onSubmit, onClose }) => {
           zipCode: formData.zipCode,
           gender: formData.gender,
           age: formData.age,
+          customerType: formData.customerType,
           marketingConsent: formData.marketingConsent,
           source: 'react_chat_widget',
           timestamp: new Date().toISOString()
@@ -224,6 +227,7 @@ const ChatAuthFormWithVerification = ({ onSubmit, onClose }) => {
       localStorage.setItem('user_zipCode', formData.zipCode);
       localStorage.setItem('user_gender', formData.gender);
       localStorage.setItem('user_age', formData.age);
+      localStorage.setItem('user_customerType', formData.customerType);
       localStorage.setItem('user_consent', formData.marketingConsent);
       localStorage.setItem('email_verified', 'true');
       localStorage.setItem('verification_timestamp', Date.now().toString());
@@ -524,6 +528,23 @@ const ChatAuthFormWithVerification = ({ onSubmit, onClose }) => {
             </div>
           </div>
 
+          <div className="form-group">
+            <label htmlFor="customerType">Customer Type *</label>
+            <select
+              id="customerType"
+              name="customerType"
+              value={formData.customerType}
+              onChange={handleInputChange}
+              required
+              disabled={isLoading}
+            >
+              <option value="">Select customer type</option>
+              <option value="Authorized Dealer">Authorized Dealer</option>
+              <option value="End Customer/Dental Professional">End Customer/Dental Professional</option>
+              <option value="Prospective Customer seeking information">Prospective Customer seeking information</option>
+            </select>
+          </div>
+
           <div className="consent-group">
             <label className="consent-checkbox">
               <input
@@ -536,8 +557,8 @@ const ChatAuthFormWithVerification = ({ onSubmit, onClose }) => {
               />
               <span className="custom-checkbox"></span>
               <span className="consent-text">
-                I consent to receive appointment reminders and updates via text and email. 
-                My data is secured under HIPAA. Reply STOP to unsubscribe. *
+                I consent to receive updates and information via text and email.
+                Reply STOP to unsubscribe. *
               </span>
             </label>
             {consentError && (

@@ -239,6 +239,7 @@ class ChatService {
         zip_code: userData.zipCode || '',
         gender: userData.gender || '',
         age: userData.age ? parseInt(userData.age) : null,
+        customer_type: userData.customerType || '',
         marketing_consent: userData.marketingConsent || false,
         updated_at: new Date().toISOString()
       };
@@ -408,6 +409,7 @@ class ChatService {
         zipCode: userProfile?.zip_code || '',
         gender: userProfile?.gender || '',
         age: userProfile?.age || '',
+        customerType: localStorage.getItem('user_customerType') || userProfile?.customer_type || '',
         marketingConsent: userProfile?.marketing_consent || false,
         channel: 'webchat',
         timestamp: new Date().toISOString(),

@@ -5,8 +5,8 @@ const chatConfig = {
   // n8n Webhook URLs
   webhooks: {
     chat: 'https://n8n.3dsmilesolutions.ai/webhook/imic',
-    formSubmit: 'https://n8n.3dsmilesolutions.ai/webhook/form-submit', // UPDATE THIS WITH YOUR FORM SUBMISSION WEBHOOK URL
-    codeVerification: 'https://n8n.3dsmilesolutions.ai/webhook/verify-code', // Verification webhook
+    formSubmit: 'https://n8n.3dsmilesolutions.ai/webhook/imic/form-submit', // UPDATE THIS WITH YOUR FORM SUBMISSION WEBHOOK URL
+    codeVerification: 'https://n8n.3dsmilesolutions.ai/webhook/imic/verify-code', // Verification webhook
     metrics: 'https://your-n8n-instance.com/webhook/extract-metrics'
   },
 

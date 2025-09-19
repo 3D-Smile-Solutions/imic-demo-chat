@@ -1,0 +1,7 @@
+{
+  "uid": "settings-IMIC-Demo",
+  "type": "settings",
+  "config": {
+    "entrypoint": "/app/settings/NewSettingsPage.tsx"
+  }
+}
