@@ -67,6 +67,10 @@
   margin-top: 0;
 }
 
+.chat-auth-form input::placeholder{
+  color: #dbdbdb !important;
+}
+
 .verification-group input::placeholder{
   color: #8d8d8d !important;
 }
