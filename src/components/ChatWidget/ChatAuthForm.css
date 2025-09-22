@@ -374,10 +374,11 @@
 @media (max-width: 600px) {
   .chat-auth-container {
     padding: 20px;
+    padding-top: 160px;
   }
 
   .chat-auth-header h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .form-row {
