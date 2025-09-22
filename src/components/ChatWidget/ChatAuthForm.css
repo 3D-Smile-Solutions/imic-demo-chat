@@ -449,6 +449,7 @@
 @media (max-width: 400px) {
   .chat-auth-container {
     padding: 16px;
+    padding-top: 140px;
   }
 
   .chat-auth-header {
