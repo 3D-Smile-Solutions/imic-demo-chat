@@ -40,14 +40,14 @@
   position: absolute;
   bottom: 100px;
   right: 50px;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
-  color: #1e40af;
+  background-color: white;
+  color: #9C1A23;
   padding: 12px 20px;
   border-radius: 25px;
   font-size: 16px;
   font-weight: 600;
   box-shadow: 0 8px 25px rgba(30, 64, 175, 0.15);
-  border: 2px solid rgba(59, 130, 246, 0.3);
+  border: 2px solid #9C1A23;
   animation: messagePromptBreathe 4s ease-in-out infinite;
   white-space: nowrap;
   transform-origin: bottom right;
@@ -94,7 +94,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background-color: #ffffff;
   border: none;
   cursor: pointer;
   display: flex;
@@ -130,7 +130,8 @@
 }
 
 .chat-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  background-color: #9C1A23;
   box-shadow: 0 15px 40px rgba(30, 64, 175, 0.5);
   animation-play-state: paused;
 }
@@ -142,12 +143,26 @@
 .chat-icon {
   width: 32px;
   height: 32px;
-  fill: white;
+  fill: #9C1A23;
   transition: transform 0.3s ease;
 }
 
 .chat-button:hover .chat-icon {
   transform: scale(1.1);
+  fill: white;
+}
+
+.chat-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../assets/chat-background.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(1px);
+  z-index: -1;
 }
 
 /* Chat Window */
@@ -160,7 +175,7 @@
   max-width: 1600px;
   height: 85vh;
   max-height: 900px;
-  background: white;
+  background: url('');
   border-radius: 16px;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
   display: none;
@@ -179,7 +194,7 @@
 /* Left side - Avatar video */
 .avatar-panel {
   flex: 0 0 35%; /* Takes 35% of width */
-  background: #f8f9fa; /* Light gray/white background */
+  background: #00000050; /* Light gray/white background */
   position: relative;
   display: flex;
   align-items: center;
@@ -202,7 +217,6 @@
   flex: 0 0 65%; /* Takes 65% of width */
   display: flex;
   flex-direction: column;
-  background: white;
   border-radius: 0 16px 16px 0; /* Rounded right corners to match window */
   overflow: hidden;
   position: relative;
@@ -227,7 +241,7 @@
 
 /* Chat Header */
 .chat-header {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background: #00000050; /* Light gray/white background */
   color: white;
   padding: 16px 20px;
   display: flex;
@@ -292,7 +306,7 @@
   flex: 1;
   padding: 20px;
   overflow-y: auto;
-  background: linear-gradient(to bottom, rgba(248, 250, 255, 0.95), rgba(255, 255, 255, 0.95));
+  background: #00000017;
   position: relative;
 }
 
@@ -345,7 +359,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background: rgba(255, 255, 255, 0.212);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -354,8 +368,8 @@
 }
 
 .bot-avatar svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   fill: white;
 }
 
@@ -364,16 +378,17 @@
 }
 
 .message-content {
-  background: white;
-  color: #1f2937;
-  padding: 12px 16px;
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.212);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(30, 64, 175, 0.1);
   word-wrap: break-word;
   word-break: break-word;
   position: relative;
   font-size: 15px;
+  font-weight: 600;
   line-height: 1.5;
   text-align: left;
   white-space: pre-wrap;
@@ -384,15 +399,15 @@
 }
 
 .message.user .message-content {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: white;
+  background: rgba(255, 255, 255, 0.904);
+  color: black;
   border: none;
   box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
 }
 
 .message-timestamp {
   font-size: 11px;
-  color: #6b7280;
+  color: #ffffff;
   margin-top: 4px;
   opacity: 0.7;
   padding: 0 4px;
@@ -451,16 +466,14 @@
 .chat-input-area {
   padding: 16px;
   border-top: 1px solid rgba(30, 64, 175, 0.1);
-  background: white;
 }
 
 .chat-input-container {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: white;
   padding: 16px 20px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #6b6b6b;
 }
 
 .chat-input {
@@ -468,21 +481,32 @@
   min-height: 42px;
   max-height: 100px;
   padding: 10px 14px;
-  background: #f3f4f6;
+  background: #f3f4f68f;
   border: 2px solid transparent;
+  color: rgb(255, 255, 255);
   border-radius: 12px;
   overflow-y: auto;
-  font-size: 14px;
+  font-size: 20px;
   outline: none;
   transition: all 0.2s ease;
   resize: none;
+  font-weight: 500;
   font-family: inherit;
-  line-height: 1.5;
+  line-height: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-input::placeholder {
+  color: #c9c9c9;
+  font-weight: 500;
+  line-height: 0.8; /* Ensures consistent spacing */
+  vertical-align: middle;
 }
 
 .chat-input:focus {
-  border-color: #3b82f6;
-  background: white;
+  border-color: #ffffff00;
+  background: rgba(255, 255, 255, 0.281);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
@@ -531,8 +555,8 @@
   }
   
   .chat-window {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 90%;
     max-width: none;
     max-height: none;
     border-radius: 0;
@@ -544,14 +568,14 @@
   }
   
   .avatar-panel {
-    height: 30%;
-    min-height: 200px;
-    border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+    display: none; /* Hidden on mobile */
   }
   
   .chat-panel {
-    height: 70%;
-    border-left: none;
+    flex: 1; /* Take all available space */
+    width: 100%; /* Full width */
+    border-radius: 0; /* Remove border radius on mobile */
+    margin-left: 0; /* Remove the negative margin */
   }
 
   .chat-icon {
@@ -566,13 +590,7 @@
     padding: 10px 16px;
   }
 
-  .chat-window {
-    width: 95vw;
-    height: 90vh;
-    max-width: none;
-    max-height: none;
-    border-radius: 12px;
-  }
+  /* Remove the duplicate .chat-window rule */
 
   .chat-backdrop {
     backdrop-filter: blur(2px);
@@ -589,8 +607,8 @@
 
 @media (max-width: 480px) {
   .chat-window {
-    width: 100vw;
-    height: 100vh;
+    width: 95vw;
+    height: 90vh;
     border-radius: 0;
   }
 }

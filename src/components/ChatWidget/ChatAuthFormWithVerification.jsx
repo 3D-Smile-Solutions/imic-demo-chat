@@ -360,7 +360,7 @@ const ChatAuthFormWithVerification = ({ onSubmit, onClose }) => {
           </div>
 
           <form className="chat-auth-form" onSubmit={handleVerificationSubmit}>
-            <div className="form-group">
+            <div className="form-group verification-group">
               <label htmlFor="verificationCode">Verification Code</label>
               <input
                 type="text"
