@@ -11,3 +11,710 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #000;
+}
+
+/* Header Container */
+.header {
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    width: 100%;
+}
+
+/* Top Navigation Bar */
+.header-top {
+    background: #000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0;
+}
+
+.header-top-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    gap: 0;
+}
+
+.top-nav-item {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.top-nav-item:first-child {
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.top-nav-item:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+/* Main Header Bar */
+.header-main {
+    background: #000;
+    padding: 15px 0;
+}
+
+.header-main-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Logo */
+.logo {
+    flex-shrink: 0;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.logo-title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.logo-subtitle {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.5px;
+}
+
+/* Sub Navigation */
+.sub-nav {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+.sub-nav-item {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.sub-nav-item:hover {
+    color: #0099cc;
+}
+
+/* Right Navigation */
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-shrink: 0;
+}
+
+.right-nav-item {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.right-nav-item:hover {
+    color: #0099cc;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Section Styles */
+.section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-dark {
+    background: #000;
+    color: #fff;
+}
+
+.section-light {
+    background: #fff;
+    color: #333;
+}
+
+.section-gray {
+    background: #d3d3d3;
+    color: #000000;
+}
+
+.section-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+}
+
+/* Specific Section Background Styles */
+.hero-section {
+    background-position: right center;
+    min-height: 600px;
+}
+
+.warranty-section {
+    min-height: 500px;
+    position: relative;
+}
+
+.warranty-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.warranty-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.maintenance-section {
+    background-position: center right;
+    min-height: 500px;
+}
+
+.tools-section {
+    min-height: 500px;
+}
+
+.contact-section {
+    min-height: 800px;
+}
+
+.academy-logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.academy-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-25 {
+    flex: 0 0 25%;
+    padding: 0 15px;
+}
+
+.col-33 {
+    flex: 0 0 33.333%;
+    padding: 0 15px;
+}
+
+.col-50 {
+    flex: 0 0 50%;
+    padding: 0 15px;
+}
+
+.col-75 {
+    flex: 0 0 75%;
+    padding: 0 15px;
+}
+
+.col-100 {
+    flex: 0 0 100%;
+    padding: 0 15px;
+}
+
+/* Typography */
+h1, h2 {
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.section-light h2,
+.trade-up-section h2,
+.contact-section h2 {
+    text-align: center;
+}
+
+.subheader {
+    display: block;
+    font-size: 1rem;
+    color: #af212b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.heading-text {
+    display: block;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.3rem;
+}
+
+/* Accordion */
+.accordion {
+    margin-top: 30px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(175,33,43,0.2);
+}
+
+.section-dark .accordion-item {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.accordion-header {
+    padding: 20px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.accordion-header:hover {
+    color: #af212b;
+}
+
+.accordion-icon {
+    transition: transform 0.3s;
+    font-size: 12px;
+}
+
+.accordion-content {
+    display: none;
+    padding-bottom: 30px;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content-inner {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.accordion-image {
+    flex: 0 0 40%;
+    max-width: 300px;
+}
+
+.accordion-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.accordion-text {
+    flex: 1;
+}
+
+/* Contact Box */
+.contact-box {
+    background: #000000;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    border: 1px solid #e0e0e0;
+}
+
+.contact-box h3 {
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    width: 24px;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.contact-box a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    color: #b1b1b1;
+}
+
+/* Images */
+.image-wrapper {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Button */
+.button {
+    display: inline-flex;
+    align-items: center;
+    background: #af212b;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background: #8a1a22;
+}
+
+/* Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #ffffff49;
+    color: #ffffff;
+}
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em 1.5em;
+    padding-right: 3rem;
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.mandatory {
+    color: #af212b;
+}
+
+/* Footer */
+.footer {
+    background: #ffffff;
+    color: #000000;
+    padding: 60px 0 30px;
+    border-top: 1px solid #ffffff;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 0 0 25%;
+    padding: 0 15px;
+}
+
+.footer h4 {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.footer-links {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #af212b;
+}
+
+.footer-bottom {
+    border-top: 1px solid #000000;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+}
+
+@media (max-width: 1024px) {
+    .header-main-inner {
+        gap: 20px;
+    }
+
+    .sub-nav {
+        gap: 20px;
+    }
+
+    .right-nav {
+        gap: 15px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+     .accordion-content-inner {
+        flex-direction: column;
+    }
+    
+    .accordion-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* Header mobile styles */
+    .header-top {
+        display: none;
+    }
+
+    .logo-subtitle {
+        display: none;
+    }
+
+    .sub-nav {
+        display: none;
+    }
+
+    .right-nav-item {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-main-inner {
+        padding: 0 15px;
+    }
+
+    /* The following styles are duplicates or for different class names - removing redundancy */
+    /* .top-bar, .main-header, .mobile-menu-toggle are not used in your current structure */
+    
+    /* Mobile navigation - you'll need this if you add a mobile menu */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: #1a1a1a;
+        transition: left 0.3s;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .main-nav.mobile-open {
+        left: 0;
+    }
+
+    /* These styles are for dropdown menus if you add them later */
+    .nav {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-item {
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-item > a {
+        padding: 15px 10px;
+        justify-content: space-between;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: #0a0a0a;
+        display: none;
+    }
+
+    .nav-item.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        padding-left: 30px;
+    }
+
+    /* Column layouts for mobile */
+    .col-25, .col-33, .col-50, .col-75 {
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+    
+    .footer-col {
+        flex: 0 0 50%;
+        margin-bottom: 30px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .container {
+        padding: 40px 20px;
+    }
+    
+    .section-bg {
+        min-height: 400px;
+    }
+    
+    .hero-section,
+    .warranty-section,
+    .maintenance-section,
+    .tools-section {
+        background-position: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-col {
+        flex: 0 0 100%;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .subheader {
+        font-size: 0.85rem;
+    }
+}
