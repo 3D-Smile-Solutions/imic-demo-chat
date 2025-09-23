@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './InternalChat.css';
+import Logo from '../../assets/Logo.svg'; // Ensure you have a logo image in the specified path
 
 const InternalChat = () => {
   const [messages, setMessages] = useState([]);
@@ -380,6 +381,10 @@ const InternalChat = () => {
   return (
     <div className="internal-chat-container">
       <div className="internal-chat-sidebar">
+        <div className="sidebar-logo">
+          {/* Option 1: Use an image */}
+          <img src={Logo} alt="Company Logo" />
+        </div>
         <button className="new-chat-button" onClick={() => {
           if (confirm('Start a new chat? Current conversation will be saved.')) {
             // Generate new session ID

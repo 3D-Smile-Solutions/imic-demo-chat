@@ -602,7 +602,44 @@
     margin: 0 0.5rem;
   }
 }
+/* Logo area */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
 
+.sidebar-logo img {
+  max-width: 180px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+}
+
+/* Alternative text/icon logo */
+.sidebar-logo-text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.sidebar-logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
 /* Scrollbar styling */
 .internal-chat-messages::-webkit-scrollbar,
 .chat-history::-webkit-scrollbar {
