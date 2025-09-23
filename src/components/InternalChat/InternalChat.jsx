@@ -488,7 +488,7 @@ const InternalChat = () => {
             </button>
           </div>
           <div className="input-helper-text">
-            Press Enter to send, Shift+Enter for new line
+            Press Enter to send, Shift+Enter for New line
           </div>
         </div>
       </div>
