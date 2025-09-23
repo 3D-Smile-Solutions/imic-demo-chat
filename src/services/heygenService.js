@@ -94,16 +94,25 @@ class HeyGenService {
         avatarName: chatConfig.heygen.avatarId,
         voice: {
           voiceId: chatConfig.heygen.voiceId || undefined
-        }
+        },
+        language: chatConfig.heygen.language || 'en' // Add language configuration
       });
       
       this.sessionData = sessionInfo;
       this.isInitialized = true;
       this.isInitializing = false;
-      
+
       console.log('Avatar session initialized:', sessionInfo.session_id);
       this.emit('avatar:initialized', sessionInfo);
-      
+
+      // Speak the starting message if configured
+      if (chatConfig.heygen.startingMessage) {
+        console.log('Speaking starting message:', chatConfig.heygen.startingMessage);
+        setTimeout(() => {
+          this.speak(chatConfig.heygen.startingMessage);
+        }, 1000); // Small delay to ensure avatar is fully ready
+      }
+
       return sessionInfo;
     } catch (error) {
       console.error('Error initializing avatar:', error);

@@ -56,6 +56,8 @@ const chatConfig = {
     apiKey: 'MjNjNjgxODg5OTk4NGY3YTljZjMwOGVmMDczZTQ1ZjUtMTc1NTYyOTQyOQ==',
     avatarId: 'Katya_ProfessionalLook_public', // Professional female avatar
     voiceId: null, // Will use avatar's default voice
+    language: 'de', // Language code: 'en' for English, 'es' for Spanish, 'fr' for French, etc.
+    startingMessage: 'Hallo! Ich bin hier, um Ihnen zu helfen. Wie kann ich Ihnen heute behilflich sein?', // German welcome message
     quality: 'high', // Changed to high for better video quality
     silenceTimeout: 5000, // Stop avatar after 5 seconds of silence
     taskType: 'repeat' // 'repeat' to speak exactly what n8n returns, 'talk' for AI responses
